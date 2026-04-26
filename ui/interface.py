@@ -8,7 +8,7 @@ class ChatApp:
     def __init__(self):
         self.app = ctk.CTk()
         ctk.set_appearance_mode("dark")
-        self.app.title("Mini ChatGPT")
+        self.app.title("AI Chat Desktop")
         self.app.geometry("700x800")
 
         # Para garantir que saia quando fechar pela janela
@@ -18,7 +18,7 @@ class ChatApp:
 
     def criar_componentes(self):
         # Titulo
-        self.titulo = ctk.CTkLabel(self.app, text="ChatGPT", font=("Arial", 20))
+        self.titulo = ctk.CTkLabel(self.app, text="AI Chat Desktop", font=("Arial", 20))
         self.titulo.pack(pady=10)
 
         # chat
@@ -64,7 +64,7 @@ class ChatApp:
         self.chat_box.see("end")
         self.entrada.delete(0, "end")
 
-        self.chat_box.insert("end", "\nGPT: pensando...\n")
+        self.chat_box.insert("end", "\nAI: pensando...\n")
         self.chat_box.see("end")
 
         # Desabilita botão enquanto processa
@@ -85,7 +85,7 @@ class ChatApp:
 
     def mostrar_resposta(self, resposta):
         self.chat_box.delete("end-2l", "end-1l")  # Remove linha "pensando..."
-        self.chat_box.insert("end", f"GPT: {resposta}\n\n")
+        self.chat_box.insert("end", f"AI: {resposta.replace("**", "")}\n\n")
         self.chat_box.see("end")
 
         # Reabilita botão
