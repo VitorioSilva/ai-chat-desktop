@@ -1,6 +1,6 @@
 import customtkinter as ctk
 import threading
-from services.ai import responder
+from services.ai_service import responder
 import sys
 
 
